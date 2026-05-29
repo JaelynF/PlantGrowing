@@ -1,261 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Plant Growing Guide</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap"
-        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet"/>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #f7f4ee;
-            color: #2a2a2a;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        main {
-            flex: 1;
-        }
-
-        /* NAVBAR */
-        header {
-            background-color: #2c3a2e;
-            padding: 20px 0;
-        }
-
-        .container {
-            width: 90%;
-            margin: auto;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav h2 {
-            font-family: 'Playfair Display', serif;
-            color: #e8ded0;
-            font-size: 1.4rem;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 28px;
-        }
-
-        nav ul li a {
-            color: #c5d5b5;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #e8ded0;
-        }
-
-        /* HERO */
-        .hero {
-            height: 92vh;
-            background: url('https://images.pexels.com/photos/4503816/pexels-photo-4503816.jpeg') no-repeat center bottom/cover;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-left: 8%;
-        }
-
-        .hero-content {
-            max-width: 560px;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.6rem;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #e8ded0;
-            margin-bottom: 28px;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #f0d9bd;
-            color: #573c06;
-            padding: 13px 36px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #e8ded0;
-        }
-
-        /* RESOURCES SECTION */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #2c3a2e;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .section p.sub {
-            color: #7a7a6a;
-            font-size: 0.95rem;
-            margin-bottom: 48px;
-        }
-
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .resource-card {
-            background: #fff;
-            padding: 28px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .resource-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            color: #2c3a2e;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .resource-card a {
-            color: #4a6741;
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
-
-        .resource-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* FACT STRIP */
-        .fact-strip {
-            background-color: #2c3a2e;
-            padding: 36px 0;
-            text-align: center;
-        }
-
-        .fact-strip p {
-            color: #c5d5b5;
-            font-size: 1.05rem;
-            font-style: italic;
-            letter-spacing: 0.5px;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #1a2419;
-            color: #e8ded0;
-            text-align: center;
-            padding: 24px;
-            font-size: 0.85rem;
-        }
+        body { font-family: 'Lato', sans-serif; background-color: #f7f4ee; color: #2a2a2a; display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+        .navbar { background-color: #2c3a2e !important; padding: 20px 0; }
+        .navbar-brand { font-family: 'Playfair Display', serif; color: #e8ded0 !important; font-size: 1.4rem; letter-spacing: 1px; font-weight: 600; }
+        .nav-link { color: #c5d5b5 !important; font-size: 0.9rem; letter-spacing: 0.5px; }
+        .nav-link:hover { color: #e8ded0 !important; }
+        .hero { height: 92vh; background: url('https://images.pexels.com/photos/4503816/pexels-photo-4503816.jpeg') no-repeat center bottom/cover; display: flex; align-items: center; justify-content: flex-start; padding-left: 8%; }
+        .hero-content { max-width: 560px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.6rem; font-weight: 700; color: #ffffff; line-height: 1.2; margin-bottom: 16px; }
+        .hero p { font-size: 1.1rem; color: #e8ded0; margin-bottom: 28px; font-weight: 300; line-height: 1.7; }
+        .btn-plant { display: inline-block; background-color: #f0d9bd; color: #573c06; padding: 13px 36px; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; transition: background 0.3s; border: none; }
+        .btn-plant:hover { background-color: #e8ded0; color: #573c06; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #2c3a2e; font-weight: 700; margin-bottom: 10px; }
+        .resource-card { background: #fff; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); height: 100%; }
+        .resource-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: #2c3a2e; margin-bottom: 8px; font-weight: 700; }
+        .resource-card a { color: #4a6741; text-decoration: none; font-size: 0.85rem; }
+        .resource-card a:hover { text-decoration: underline; }
+        .fact-strip { background-color: #2c3a2e; padding: 36px 0; }
+        .fact-strip p { color: #c5d5b5; font-size: 1.05rem; font-style: italic; letter-spacing: 0.5px; margin: 0; }
+        footer { background-color: #1a2419; color: #e8ded0; text-align: center; padding: 24px; font-size: 0.85rem; }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <h2>A Plant Growing Guide</h2>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="indoorplants.html">Indoor Plants</a></li>
-                    <li><a href="grow&eat.html">Grow & Eat</a></li>
-                    <li><a href="quicktips.html">Quick Tips</a></li>
-                </ul>
-            </nav>
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">A Plant Growing Guide</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="indoorplants.html">Indoor Plants</a></li>
+                <li class="nav-item"><a class="nav-link" href="grow&eat.html">Grow & Eat</a></li>
+                <li class="nav-item"><a class="nav-link" href="quicktips.html">Quick Tips</a></li>
+            </ul>
         </div>
-    </header>
+    </div>
+</nav>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Grow Something Beautiful</h1>
-                <p>Your go-to guide for growing and caring for plants at home.</p>
-                <a href="indoorplants.html" class="btn">Learn to Grow</a>
-            </div>
-        </section>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Grow Something Beautiful</h1>
+            <p>Your go-to guide for growing and caring for plants at home.</p>
+            <a href="indoorplants.html" class="btn-plant">Learn to Grow</a>
+        </div>
+    </section>
 
-        <!-- RESOURCES -->
-        <section class="section">
-            <div class="container">
-                <h2>Grow Your Knowledge from the Experts</h2>
-                <p class="sub">Trusted sources for more plant growing information</p>
-                <div class="resources-grid">
+    <section class="py-5" style="background-color:#f7f4ee;">
+        <div class="container">
+            <h2 class="section-title">Grow Your Knowledge from the Experts</h2>
+            <p class="mb-5" style="color:#7a7a6a;">Trusted sources for more plant growing information</p>
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
                     <div class="resource-card">
                         <h3>Penn State Extension</h3>
                         <a href="https://extension.psu.edu" target="_blank">extension.psu.edu</a>
                     </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
                     <div class="resource-card">
                         <h3>Royal Horticultural Society</h3>
                         <a href="https://www.rhs.org.uk" target="_blank">rhs.org.uk</a>
                     </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
                     <div class="resource-card">
                         <h3>Missouri Botanical Garden</h3>
-                        <a href="https://www.missouribotanicalgarden.org"
-                            target="_blank">missouribotanicalgarden.org</a>
+                        <a href="https://www.missouribotanicalgarden.org" target="_blank">missouribotanicalgarden.org</a>
                     </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
                     <div class="resource-card">
                         <h3>University of Florida IFAS</h3>
                         <a href="https://ifas.ufl.edu" target="_blank">ifas.ufl.edu</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- FACT STRIP -->
-        <div class="fact-strip">
-            <div class="container">
-                <p>Did you know? Plants can reduce stress, boost mood, and purify the air.</p>
-            </div>
         </div>
-    </main>
+    </section>
 
-    <footer>
-        <p>© 2026 A Plant Growing Guide</p>
-    </footer>
+    <div class="fact-strip text-center">
+        <div class="container">
+            <p>Did you know? Plants can reduce stress, boost mood, and purify the air.</p>
+        </div>
+    </div>
+</main>
 
+<footer>
+    <p class="mb-0">© 2026 A Plant Growing Guide</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
